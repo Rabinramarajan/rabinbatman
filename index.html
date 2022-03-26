@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDATION</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Acme&family=Concert+One&family=Courier+Prime&family=El+Messiri:wght@600&family=Merienda&family=Merriweather&family=Poppins:ital,wght@1,300&family=Special+Elite&family=Zilla+Slab&display=swap');
+        *{
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+             font-family: "Poppins", sans-serif;
+         }
+     body{
+             width: 100%;
+             height: 100vh;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             background-image: url("images/bg.png");
+         }
+ .wrapper{
+             width: 380px;
+             padding: 40px 30px 50px 30px;
+             background: #fff;
+             border-radius: 5px;
+             text-align: center;
+             box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
+         }
+      h1{ 
+             font-size: 35px;
+             font-weight: 600; 
+             letter-spacing: 2px;
+        }
+  .border{
+             width: 180px;
+             height: 3px;
+             background: black;
+             margin: 10px auto;
+         }
+.wrapper form{
+             margin: 40px 0;
+            }
+form .field{
+             width: 100%;
+             margin-bottom: 20px;
+            }
+.input-area{
+             height: 50px;
+             width: 100%;
+             position: relative;
+      }      
+.input-area input{
+             width: 100%;
+             height: 100%;
+             outline: none;
+             padding: 0 45px;
+             font-size: 18px;
+             background: none;
+             caret-color: #5372F0;
+             border-radius: 10px;
+             border: 1px solid #bfbfbf;
+             border-bottom-width: 2px;
+             transition: all 0.2 ease;
+      }
+.input-area input:focus{
+             border-color: #5372F0;
+      }    
+.input-area i{
+             position: absolute;
+             top: 50%;
+             font-size: 18px;
+             pointer-events: none;
+             transform: translateY(-50%);
+      }
+.input-area .icon{
+             left: 15px;
+             color: gray;
+             transition: color 0.2s ease;
+      }
+ .input-area input:focus~.icon{
+             color: #5372F0;
+      }
+    .pass-txt{
+             text-align: left;
+             margin-top: -10px;
+    }
+    .pass-txt a{
+             text-decoration: none;
+             color: #5372F0;
+    }
+    .pass-txt a:hover{
+             text-decoration: underline;
+    }
+    form input[type="submit"]{
+             width: 250px;
+             height: 50px;
+             margin-top: 30px;
+             color: white;
+             padding: 0;
+             border: none;
+             border-radius: 10px;
+             background: #5372F0;
+             cursor: pointer;
+             border-bottom: 2px solid rgba(0,0,0,0.1);
+             transition: all 0.3s ease;
+    }
+    form input[type="submit"]:hover{
+             background: #2c52ed;
+    }
+    .sign-txt a{
+             color: blue;
+             text-decoration: none;
+             letter-spacing: 1px;
+    }
+    </style>
+</head>
+<body>
+        <div class="wrapper">
+        <h1>Login Form</h1>
+        <div class="border"></div>
+        <form onsubmit="return frm()">
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text" placeholder="Email Address" id="nme">
+                    <i class="icon fas fa-envelope"></i>
+                    <span id="name"></span>
+                </div>
+            </div>
+        <div class="field password">
+        <div class="input-area">
+          <input type="password" placeholder="Password" id="pass">
+          <i class="icon fas fa-lock"></i>
+          <span id="password"></span>
+        </div>
+      </div>
+      <div class="pass-txt"><a href="#">Forgot password?</a></div>
+      <input type="submit" value="Login">
+    </form>
+    <div class="sign-txt">Not yet member? <a href="file:///C:/Users/RABIN%20R/OneDrive/Desktop/Form%20validation/signup.html">Signup now</a></div>
+        </div>
+
+        <script>
+           function frm()
+        {
+            let passerr1=document.getElementById("password");
+            let inp=document.getElementById("nme");
+            let inppass=document.getElementById("pass");
+            let uname=document.getElementById("nme").value;
+            let pass=document.getElementById("pass").value;
+            let unameerr=document.getElementById("name");
+            if(uname=="tvsmotors" && pass==9876543211 )
+            {
+               window.open("https://www.tvsmotor.com/");
+            }
+            if(uname=="")
+            {
+                unameerr.innerHTML="Email can't be blank";
+                unameerr.style.color="red";
+                inp.style.borderColor="red";
+                return false;
+            }
+            if(pass=="")
+            {
+                passerr1.innerHTML="Password can't be blank";
+                passerr1.style.color="red";
+                inp.style.borderColor="red";
+                return false;
+            }
+        }
+        </script>
+</body>
+</html>
